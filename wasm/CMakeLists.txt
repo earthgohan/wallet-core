@@ -7,6 +7,7 @@
 file(GLOB wasm_sources src/*.cpp src/generated/*.cpp)
 file(GLOB wasm_headers src/*.h src/generated/*.h)
 set(TARGET_NAME wallet-core)
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s SINGLE_FILE")
 set(CMAKE_EXECUTABLE_SUFFIX ".js")
 add_executable(${TARGET_NAME} ${wasm_sources} ${wasm_headers})
 
